@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     entry: {
-        main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js']
+        main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/public/index.jsx']
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -18,7 +18,7 @@ module.exports = {
         rules: [
             {
                 enforce: "pre",
-                test: /\.js$/,
+                test: /\.(js|jsx|mjs)$/,
                 exclude: /node_modules/,
                 loader: "eslint-loader",
                 options: {
@@ -28,7 +28,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx|mjs)$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },

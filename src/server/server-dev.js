@@ -1,3 +1,5 @@
+//@flow
+
 import path from 'path'
 import express from 'express'
 import webpack from 'webpack'
@@ -16,7 +18,8 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler))
 
-app.get('*', (req, res, next) => {
+app.get('*', (req, res, next: (any) => void) => {
+  //$FlowFixMe - webpack type needs updating
   compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
   if (err) {
     return next(err)

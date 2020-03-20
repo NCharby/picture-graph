@@ -1,0 +1,17 @@
+[ignore]
+.*/build/.*
+.*/dist/.*
+
+[include]
+
+[libs]
+flow-typed
+./flow-custom
+
+[lints]
+deprecated-utility=off
+
+[options]
+
+
+[strict]
