@@ -1,3 +1,4 @@
+//@flow
 import ImageAPI from './ImageSearch'
 import resolvers from './resolvers'
 

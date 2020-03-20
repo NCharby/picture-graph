@@ -6,7 +6,6 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from '../../webpack.dev.config.js'
-import AppRouter from './router'
 
 import { ApolloServer } from 'apollo-server-express'
 
@@ -28,8 +27,6 @@ const GraphQlServer = new ApolloServer({
 });
 
 GraphQlServer.applyMiddleware({ app })
-
-app.use(AppRouter)
 
 app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath

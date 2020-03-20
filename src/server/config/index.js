@@ -1,3 +1,4 @@
+//flow
 import { ENV_FILE, PRODUCTION, PORT } from './env'
 
 export default {

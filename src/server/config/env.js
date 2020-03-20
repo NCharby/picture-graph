@@ -1,11 +1,11 @@
-
+//flow
 type $ENV_FILE = {
     parsed: {
         PIXABAY_API_KEY: string,
     }
 }
 
-// $FlowFixMe
+// $FlowFixMe - I've never found a clean way to do this
 export const ENV_FILE: $ENV_FILE = require('dotenv').config()
 
 export const PRODUCTION: boolean = process.env.NODE_ENV === 'production'
