@@ -12,6 +12,7 @@ import { ApolloServer } from 'apollo-server-express'
 
 import { resolvers } from './g/resolvers/index'
 import { typeDefs } from './g/schema/index'
+import { ImageAPI } from './g/resolvers/index'
 
 const app = express(),
             DIST_DIR = __dirname,
@@ -21,6 +22,9 @@ const app = express(),
 const GraphQlServer = new ApolloServer({
   typeDefs,
   resolvers,
+  dataSources: () => {
+      return { ImageAPI: new ImageAPI() }
+  }
 });
 
 GraphQlServer.applyMiddleware({ app })
