@@ -5,8 +5,9 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+
+import TagList from './tags.component'
+import ImageMeta from './imageMeta.component'
 
 import type { $ImageResult } from 'Demo.Results'
 
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1)
     },
     action: {
-        margin: theme.spacing(0, 1)
+        
     },
     media: {
         height: props => props.previewHeight,
@@ -29,12 +30,6 @@ export default function ImageCard(props: Props) {
     const { 
         id, 
         previewURL, 
-        previewWidth, 
-        previewHeight, 
-        largeImageURL, 
-        favorites, 
-        likes, 
-        user, 
         tags 
         } = props
 
@@ -47,12 +42,19 @@ export default function ImageCard(props: Props) {
             <CardActionArea
                 className={classes.action}
                 >
+                <ImageMeta
+                        {...props}
+                    />
                 <CardMedia
                     image={previewURL}
                     className={classes.media}
                     />
                 <CardContent>
-                    <span>{tags}</span>
+                    
+                    <TagList
+                        id={id}
+                        tags={tags}
+                    />
                 </CardContent>
             </CardActionArea>
         </Card>
