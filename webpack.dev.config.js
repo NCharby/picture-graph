@@ -11,6 +11,9 @@ module.exports = {
         publicPath: '/',
         filename: '[name].js'
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.css', '.es6'],
+    },
     mode: 'development',
     target: 'web',
     devtool: '#source-map',
@@ -61,5 +64,10 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin()
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    }
 }
