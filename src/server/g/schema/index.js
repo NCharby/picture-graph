@@ -14,6 +14,7 @@ export const typeDefs = gql`
         favorites: Int!
         likes: Int!
         user: String
+        userImageURL: String
     }
 
     enum Colors {

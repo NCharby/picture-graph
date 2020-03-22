@@ -2,7 +2,7 @@
 
 declare module 'Demo.Schema' {
 
-    declare type $APICategrories = 
+    declare type APICategrories = 
         | "backgrounds"
         | "fashion"
         | "nature"
@@ -24,7 +24,7 @@ declare module 'Demo.Schema' {
         | "business"
         | "music"
 
-    declare type $APIColors = 
+    declare type APIColors = 
         | "grayscale"
         | "transparent"
         | "red"
@@ -39,5 +39,20 @@ declare module 'Demo.Schema' {
         | "gray"
         | "black"
         | "brown"
+
+    declare type APIOrder = 
+        | "popular"
+        | "latest"
+
+    declare type $APISearchQuery = {
+        page?: number,
+        per_page?: number,
+        editors_choice?: boolean,
+        cat: APICategrories,
+        color: APIColors,
+        q: string,
+        order: APIOrder
+
+    }
 
 }

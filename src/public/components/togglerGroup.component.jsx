@@ -54,7 +54,6 @@ type Props = {
 
 export default function TogglerGroup(props: Props){
     const { items, onChangeItems, selectedItems, style } = props
-    console.log(selectedItems)
     return (
         <div style={style}>
             {buildButtons(items, onChangeItems, selectedItems)}
