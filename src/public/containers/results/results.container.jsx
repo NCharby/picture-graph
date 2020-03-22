@@ -5,13 +5,16 @@ import { ImageGrid } from '../../components/index'
 
 import { Q } from '../../g/index'
 
-type Props = {
+// type Props = {
 
-}
+// }
 
-export default function Results(props: Props) {
+export default function Results() {
+    // const [curPage, setCurPage] = React.useState(1)
 
-    const { loading, error, data } = useQuery(Q.GET_DEFAULT_RESULTS);
+    const { loading, error, data } = useQuery(Q.GET_DEFAULT_RESULTS, {
+        variables: {page: 1}
+    });
 
     if(error) {
         console.error(error)
@@ -29,8 +32,7 @@ export default function Results(props: Props) {
             </div>
         )
     }
-
-    console.log(data)
+    
     return (
         <div>
             <ImageGrid results={data.search} />

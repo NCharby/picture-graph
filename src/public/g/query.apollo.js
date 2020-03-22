@@ -1,11 +1,10 @@
 //@flow
 import { gql } from "apollo-boost";
 
-import type { $APISearchQuery } from 'Demo.Schema'
-
+//NOTE: $page starts at 1
 export const GET_DEFAULT_RESULTS = gql`
-    {
-        search(per_page: 25, order: latest, editors_choice:true) {
+    query Search($page: Int!){
+        search(page: $page, per_page: 40, order: latest, editors_choice:true) {
             id,
             type,
             tags,

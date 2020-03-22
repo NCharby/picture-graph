@@ -32,3 +32,12 @@ yarn run start
 - `src/server/g/`: A graphQL wrapper around pixabay
 - `create-react-app` is great and all, but I prefer to know how my tool runs
 - `src/public/components/` and `src/public/containers/` is a nice way to stay organized
+- `src/public/containers/results/index.js` is pretty complicated to make a dynamic tile display
+
+
+## TODO
+- Permalink Routing for single image viewing
+- Error handling.. all over the place
+- Get an E2E testing harness on this
+    - Ok, really any tests would be a good idea
+- HMR is partly borked. Investigate

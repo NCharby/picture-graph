@@ -8,27 +8,22 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+import type { $ImageResult } from 'Demo.Results'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
         maxWidth: 345,
+        margin: theme.spacing(1)
+    },
+    action: {
+        margin: theme.spacing(0, 1)
     },
     media: {
-        height: 140,
+        height: props => props.previewHeight,
     },
-});
+}));
 
-type Props = {
-    id: number,
-    previewURL: string,
-    previewWidth: number,
-    previewHeight: string,
-    largeImageURL: string,
-    favorites: number,
-    likes: number,
-    user: string,
-    tags: string
-}
+type Props = $ImageResult
 
 export default function ImageCard(props: Props) {
     const { 
@@ -43,12 +38,14 @@ export default function ImageCard(props: Props) {
         tags 
         } = props
 
-    const classes = useStyles()
+    const classes = useStyles(props)
 
     return (
-        <Card>
+        <Card
+            className={classes.root}
+            >
             <CardActionArea
-                className={classes.root}
+                className={classes.action}
                 >
                 <CardMedia
                     image={previewURL}
