@@ -9,6 +9,10 @@ Project assumes you have `node` and `yarn` installed globally
 //install deps
 yarn
 
+//set env vars
+cp .sample.env .env
+nano .env //or whatever editor you like. Add the PIXABAY_API_KEY
+
 //dev mode
 yarn run watch
 

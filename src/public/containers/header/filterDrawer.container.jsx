@@ -20,7 +20,7 @@ export default function FilterDrawer(props: Props){
     return (
         <ExpansionPanel style={{maxWidth: '100%'}}>
             <ExpansionPanelSummary
-                expandIcon={<Icon>expand</Icon>}
+                expandIcon={<Icon>keyboard_arrow_down</Icon>}
                 id={`filter-drawer-${displayText}`}
                 >
                 <Typography>{displayText}</Typography>
